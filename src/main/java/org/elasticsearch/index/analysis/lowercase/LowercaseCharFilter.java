@@ -17,7 +17,7 @@ public class LowercaseCharFilter extends BaseCharFilter {
     @Override
     public int read(char[] cbuf, int off, int len) throws IOException {
 
-        if(transformedInput == null) {
+        if (transformedInput == null) {
             fill();
         }
 
@@ -25,8 +25,8 @@ public class LowercaseCharFilter extends BaseCharFilter {
     }
 
     public String fill() throws IOException {
-        StringBuilder buffered = readInputKeyword();
-        String result = buffered.toString().toLowerCase();
+        StringBuilder buffered  = readInputKeyword();
+        String result  = buffered.toString().toLowerCase();
         transformedInput = new StringReader(result);
         return result;
     }
@@ -34,7 +34,7 @@ public class LowercaseCharFilter extends BaseCharFilter {
     private StringBuilder readInputKeyword() throws IOException {
         StringBuilder buffered = new StringBuilder();
         char[] temp = new char[1024];
-        for(int cnt = input.read(); cnt > 0; cnt = input.read(temp)) {
+        for (int cnt = input.read(temp); cnt > 0; cnt = input.read(temp)) {
             buffered.append(temp, 0, cnt);
         }
         return buffered;
