@@ -5,7 +5,7 @@ buildscript {
         elasticsearchVersion = project.properties['elasticsearchVersion']
         pluginName = rootProject.properties['pluginName']
         luceneVersion = project.properties['luceneVersion']
-        javaVersion = 21
+        javaVersion = 17
     }
 }
 

@@ -10,6 +10,7 @@ import org.elasticsearch.index.analysis.eng2kor.Eng2KorConvertFilterFactory;
 import org.elasticsearch.index.analysis.jamo.JamoCharFilterFactory;
 import org.elasticsearch.index.analysis.jamo.JamoTokenFilterFactory;
 import org.elasticsearch.index.analysis.kor2eng.Kor2EngConvertFilterFactory;
+import org.elasticsearch.index.analysis.lowercase.LowercaseCharFilterFactory;
 import org.elasticsearch.index.analysis.soundex.SoundexConvertFilterFactory;
 import org.elasticsearch.index.analysis.spell.SpellFilterFactory;
 import org.elasticsearch.indices.analysis.AnalysisModule;
@@ -49,6 +50,7 @@ public class ElasticsearchPlugin extends Plugin implements AnalysisPlugin {
         Map<String, AnalysisModule.AnalysisProvider<CharFilterFactory>> extra = new HashMap<>();
 
         extra.put("jamo_char_filter", JamoCharFilterFactory::new);
+        extra.put("lowercase_char_filter", LowercaseCharFilterFactory::new);
         return extra;
     }
 }
